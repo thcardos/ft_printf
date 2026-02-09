@@ -176,7 +176,7 @@
 
 **Compilation with the library**
 ```bash
-cc -Wall -Wextra -Werror main.c -o test
+cc -Wall -Wextra -Werror main.c libftprintf.a -o test
 ```
 
 **Available commands**
@@ -192,7 +192,7 @@ cc -Wall -Wextra -Werror main.c -o test
 
 <sub>**Testing the functions:**</sub>
 
-<sub>Here you have the [Main File] (AÑADIR LINK AQUI Y PEGAR EL PARENTESIS AL CORCHETE DE LA IZQUIERDA) I have created to test my functions.
+<sub>Here you have the [Main File](https://github.com/thcardos/ft_printf/blob/main/main.c) I have created to test my functions.
 </sub>
 
 
