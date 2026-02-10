@@ -33,9 +33,7 @@ static int	ft_handle_spec(const char *input, int *i, va_list args)
 		return (ft_print_hex(va_arg(args, unsigned int), 1));
 	if (spec == 'p')
 		return (ft_print_ptr(va_arg(args, void *)));
-	ft_putchar_fd('%', 1);
-	ft_putchar_fd(spec, 1);
-	return (2);
+	return (0);
 }
 
 static int	ft_handle_percent(const char *input, int *i, va_list args)
