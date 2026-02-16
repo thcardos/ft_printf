@@ -58,10 +58,15 @@
 <sub>**`ft_handle_spec`** </sub>
 
 <sub>- Processes individual format specifiers (c, s, d, i, u, x, X, p)</sub>
+
 <sub>- Validates if the specifier is recognized</sub>
+
 <sub>- Calls `ft_process_valid()` to execute the appropriate print function</sub>
+
 <sub>- Handles invalid specifiers by printing them as-is</sub>
+
 <sub>- Returns the count of characters printed</sub>
+
 
 <sub>**`ft_process_valid`**</sub>
 
@@ -70,43 +75,61 @@
 <sub>**`ft_print_char`**</sub>
 
 <sub>- Prints a single character</sub>
+
 <sub>- Casts input to `unsigned char` to handle edge cases</sub>
+
 <sub>- Returns 1 (always prints exactly one character)</sub>
 
 <sub>**`ft_print_str`**</sub>
 
 <sub>- Prints a string safely</sub>
+
 <sub>- Handles NULL pointers by printing "(null)"</sub>
+
 <sub>- Returns the length of the printed string</sub>
 
 <sub>**`ft_print_int`**</sub>
 
 <sub>- Converts signed integers to strings and prints them</sub>
+
 <sub>- Uses `ft_itoa()` from libft to handle the conversion</sub>
+
 <sub>- Manages memory deallocation after printing</sub>
+
 <sub>- Returns the number of digits printed</sub>
 
 <sub>**`ft_print_uint`**</sub>
 
 <sub>- Prints unsigned integers directly without conversion</sub>
+
 <sub>- Uses recursive digit extraction to avoid string allocation</sub>
+
 <sub>- Counts and prints each digit in sequence</sub>
+
 <sub>- Returns the number of digits printed</sub>
 
 <sub>**`ft_print_hex`**</sub>
 
 <sub>- Converts unsigned integers to hexadecimal format</sub>
+
 <sub>- Supports both lowercase (%x) and uppercase (%X) formats</sub>
+
 <sub>- Uses a lookup string ("0123456789abcdef" or "0123456789ABCDEF")</sub>
+
 <sub>- Recursively processes each hexadecimal digit</sub>
+
 <sub>- Returns the number of characters printed</sub>
 
 <sub>**`ft_print_ptr`**</sub>
 
 <sub>- Prints memory addresses (pointers) in hexadecimal format</sub>
+
 <sub>- Adds the "0x" prefix before the address</sub>
+
 <sub>- Handles NULL pointers appropriately</sub>
+
 <sub>- Uses `unsigned long` for pointer arithmetic</sub>
+
 <sub>- Returns the total characters printed (including "0x")</sub>
 
 <sub>**Algorithm and Data Structure**</sub>
@@ -114,42 +137,63 @@
 <sub>**`Character-by-character format analysis`**</sub>
 
 <sub>I walk through the format string and react only when I encounter a `%`.</sub>
+
 <sub><sub>**Why:**</sub></sub>
+
 <sub>- It is simple and easy to follow.</sub>
+
 <sub>- It does not require complex structures.</sub>
+
 <sub>- It is efficient: it reads each character only once.</sub>
+
 <sub>- It is the same strategy used by the original `printf`.</sub>
 
 <sub>**`Converting numbers with recursivity`**</sub>
 
 <sub>To print `%u`, `%x`, and `%X`, I use recursive functions that divide the number by the base (10 or 16) and then print the digit.</sub>
+
 <sub><sub>**Why:**</sub></sub>
+
 <sub>- Recursion prints from left to right without storing digits in an array.</sub>
+
 <sub>- It avoids using extra memory to construct a string.</sub>
+
 <sub>- It is easy to read and check.</sub>
+
 <sub>- less memory and simpler code.</sub>
 
 <sub>**`Symbol table for hexadecimal`**</sub>
 
 <sub>I use a string such as ‘0123456789abcdef’ or ‘0123456789ABCDEF’.</sub>
+
 <sub><sub>**Why:**</sub></sub>
+
 <sub>- Avoids many `if/else` statements.  </sub>
+
 <sub>- It makes the code shorter and easier to read. </sub>
+
 <sub>- It is cleaner and faster.</sub>
 
 <sub>**`Separating printing and counting`**</sub>
 
 <sub>I use functions that print and others that count how many digits are printed (`ft_count_digits`).</sub>
+
 <sub><sub>**Why:**</sub></sub>
+
 <sub>- The `ft_printf` function must return the exact number of characters.  </sub>
+
 <sub>- Separating responsibilities prevents errors improves clarity and facilitates testing. </sub>
+
 <sub>- It is cleaner and faster.</sub>
 
 <sub>**`ft_itoa() for signed integers`**</sub>
 
 <sub>I reuse a previously tested function `ft_itoa()` from my `libft` to convert signed integers</sub>
+
 <sub><sub>**Why:**</sub></sub>
+
 <sub>- It handles negative signs correctly.</sub>
+
 <sub>- It simplifies the logic in `ft_print_int()`.</sub>
 
 <sub>**`Chosen data types`**</sub>
@@ -168,8 +212,11 @@
 <sub>**`Handling NULL`**</sub>
 
 <sub>- It revents memory access errors.</sub>
+
 <sub>- It matches the actual behaviour of `printf`:</sub>
+
 <sub>- `‘(null)’` for null strings</sub>
+
 <sub>- `‘(nil)’` for null pointers</sub>
 
 
