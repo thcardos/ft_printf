@@ -34,17 +34,25 @@
 <sub>**`ft_printf`** </sub>
 
 <sub>- Main entry point of the library</sub>
+
 <sub>- Takes a format string and variable arguments (va_list)</sub>
+
 <sub>- Parses the format string and processes each character</sub>
+
 <sub>- Delegates to specific handlers when encountering a `%` specifier</sub>
+
 <sub>- Returns the total number of characters printed</sub>
 
 <sub>**`ft_handle_percent`** </sub>
 
 <sub>- Handles the processing of `%` characters in the format string</sub>
+
 <sub>- Checks if the next character is a valid specifier or another `%`</sub>
+
 <sub>- Calls `ft_handle_spec()` to process the specifier</sub>
+
 <sub>- Manages string pointer advancement</sub>
+
 <sub>- Returns the number of characters written</sub>
 
 <sub>**`ft_handle_spec`** </sub>
@@ -56,11 +64,6 @@
 <sub>- Returns the count of characters printed</sub>
 
 <sub>**`ft_process_valid`**</sub>
-
-<sub>- Routes each specifier to its corresponding print function</sub>
-<sub>- Extracts the argument from va_list using `va_arg()`</sub>
-<sub>- Supports: characters, strings, signed/unsigned integers, hexadecimal, and pointers</sub>
-<sub>- Returns -1 if specifier is invalid</sub>
 
 <sub>**Output Functions**</sub>
 
